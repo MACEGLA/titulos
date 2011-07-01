@@ -1,0 +1,29 @@
+<%= form_for(@editorial) do |f| %>
+  <% if @editorial.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@editorial.errors.count, "error") %> prohibited this editorial from being saved:</h2>
+
+      <ul>
+      <% @editorial.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :codigo %><br />
+    <%= f.text_field :codigo %>
+  </div>
+  <div class="field">
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :disponible %><br />
+    <%= f.check_box :disponible %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110628032610) do
+ActiveRecord::Schema.define(:version => 20110701015352) do
 
   create_table "categorias", :force => true do |t|
     t.string   "nombre",     :limit => 150, :null => false
@@ -18,6 +18,16 @@ ActiveRecord::Schema.define(:version => 20110628032610) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "editoriales", :force => true do |t|
+    t.string   "codigo",     :limit => 2
+    t.string   "nombre",     :limit => 100
+    t.boolean  "disponible"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "editoriales", ["codigo"], :name => "editoriales_ak_codigo", :unique => true
 
   create_table "editoriales", :force => true do |t|
     t.string   "codigo",     :limit => 2
@@ -43,11 +53,5 @@ ActiveRecord::Schema.define(:version => 20110628032610) do
   add_index "productos", ["categoria_id"], :name => "fki_productos_categorias"
   add_index "productos", ["codigo"], :name => "productos_ak_codigo", :unique => true
   add_index "productos", ["editorial_id"], :name => "fki_productos_editoriales"
-
-  create_table "pruebas", :force => true do |t|
-    t.string   "campo"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
 end
