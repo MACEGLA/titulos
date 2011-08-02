@@ -1,4 +1,6 @@
 Titulos::Application.routes.draw do
+  resources :categorias
+
   resources :editoriales
 
   # The priority is based upon order of creation:

@@ -10,10 +10,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110701015352) do
+ActiveRecord::Schema.define(:version => 20110802025020) do
 
   create_table "categorias", :force => true do |t|
-    t.string   "nombre",     :limit => 150, :null => false
+    t.string   "nombre",     :limit => 150
+    t.boolean  "disponible"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "categorias", :force => true do |t|
+    t.string   "nombre",     :limit => 150
     t.boolean  "disponible"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -27,8 +34,6 @@ ActiveRecord::Schema.define(:version => 20110701015352) do
     t.datetime "updated_at"
   end
 
-  add_index "editoriales", ["codigo"], :name => "editoriales_ak_codigo", :unique => true
-
   create_table "editoriales", :force => true do |t|
     t.string   "codigo",     :limit => 2
     t.string   "nombre",     :limit => 100
@@ -36,22 +41,18 @@ ActiveRecord::Schema.define(:version => 20110701015352) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "editoriales", ["codigo"], :name => "editoriales_ak_codigo", :unique => true
 
   create_table "productos", :force => true do |t|
     t.string   "codigo",       :limit => 15,  :null => false
-    t.string   "nombre_largo", :limit => 150, :null => false
+    t.string   "nombre_largo", :limit => 250, :null => false
     t.string   "nombre_corto", :limit => 50,  :null => false
-    t.integer  "editorial_id",                :null => false
-    t.integer  "categoria_id",                :null => false
     t.boolean  "disponible"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "editorial_id"
+    t.integer  "categoria_id"
   end
 
-  add_index "productos", ["categoria_id"], :name => "fki_productos_categorias"
   add_index "productos", ["codigo"], :name => "productos_ak_codigo", :unique => true
-  add_index "productos", ["editorial_id"], :name => "fki_productos_editoriales"
 
 end
