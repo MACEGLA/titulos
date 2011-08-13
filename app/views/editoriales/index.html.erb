@@ -1,5 +1,12 @@
 <h1>Listing editoriales</h1>
 
+<% form_tag editoriales_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :buscar %>
+    <%= submit_tag "Buscar" %>
+  <P>
+<% end %>
+ 
 <table>
   <tr>
     <th>Codigo</th>
