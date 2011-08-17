@@ -1,4 +1,6 @@
 Titulos::Application.routes.draw do
+  resources :titulos
+
   resources :categorias
 
   resources :editoriales

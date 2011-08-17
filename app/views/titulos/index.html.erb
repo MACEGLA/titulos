@@ -1,0 +1,33 @@
+<h1>Listando titulos</h1>
+
+<table border="1" cellpadding="1" cellspacing="1" class="pretty">
+  <tr>
+    <th><%= sortable "codigo" %></th>
+    <th><%= sortable "nombre" %></th>
+    <th><%= sortable "abreviado" %></th>
+    <th><%= sortable "editorial_id", "Editorial" %></th>
+    <th><%= sortable "categoria_id", "Categoria" %></th>
+    <th><%= sortable "disponible" %></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @titulos.each do |titulo| %>
+  <tr>
+    <td><%= titulo.codigo %></td>
+    <td><%= titulo.nombre %></td>
+    <td><%= titulo.abreviado %></td>
+    <td><%= titulo.editorial %></td>
+    <td><%= titulo.categoria %></td>
+    <td><%= titulo.disponible %></td>
+    <td><%= link_to 'Mostrar', titulo %></td>
+    <td><%= link_to 'Editar', edit_titulo_path(titulo) %></td>
+    <td><%= link_to 'Eliminar', titulo, :confirm => 'Esta seguro?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Titulo nuevo', new_titulo_path %>
