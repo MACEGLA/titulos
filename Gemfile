@@ -11,6 +11,8 @@ gem 'simple_form'
 gem 'inherited_resources'
 gem 'will_paginate', "~> 3.0.pre2"
 
+gem 'kaminari'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

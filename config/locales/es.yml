@@ -182,3 +182,13 @@
 
       full_messages:
         format: "%{attribute} %{message}"
+
+  views:
+    pagination:
+      first: "&lt;&lt; Inicio"
+      previous: "&lt; Anterior"
+      next: "Siguiente &gt;"
+      last: "Fin &gt; &gt;"
+      truncate: "..."
+
+
