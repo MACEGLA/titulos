@@ -1,5 +1,15 @@
 <h1>Listando titulos</h1>
 
+<%= form_tag titulos_path, :method => 'get' do %>
+  <%= hidden_field_tag :direction, params[:direction] %>  
+  <%= hidden_field_tag :sort, params[:sort] %>  
+  <p>
+    <%= text_field_tag :buscar, params[:buscar] %>
+    <%= submit_tag "Buscar", :nombre => nil %>
+  <P>
+<% end %>
+
+
 <%= paginate @titulos %>
 
 <table border="1" cellpadding="1" cellspacing="1" class="pretty">
