@@ -12,7 +12,8 @@
 
 <%= paginate @titulos %>
 
-<table border="1" cellpadding="1" cellspacing="1" class="pretty">
+<!-- <table border="1" cellpadding="1" cellspacing="1" class="pretty"> -->
+<table border="0" cellpadding="0" cellspacing="0" class="listing">
   <tr>
     <th><%= sortable "codigo" %></th>
     <th><%= sortable "nombre" %></th>
@@ -34,7 +35,10 @@
     <td><%= titulo.categoria %></td>
     <td><%= titulo.disponible %></td>
     <td><%= link_to 'Mostrar', titulo %></td>
-    <td><%= link_to 'Editar', edit_titulo_path(titulo) %></td>
+    <td>
+      <!-- <img src="images/edit-icons.gif" width="16" height="16" alt="Editar" /> -->
+      <%= link_to image_tag("edit-icon.gif") , edit_titulo_path(titulo) %>
+    </td>
     <td><%= link_to 'Eliminar', titulo, :confirm => 'Esta seguro?', :method => :delete %></td>
   </tr>
 <% end %>
