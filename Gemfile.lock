@@ -83,4 +83,4 @@ DEPENDENCIES
   pg
   rails (= 3.0.7)
   simple_form
-  will_paginate (~> 3.0.pre2)
+  will_paginate

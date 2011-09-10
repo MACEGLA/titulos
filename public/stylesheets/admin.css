@@ -127,7 +127,7 @@ a.logo {
 #center-column {
 	float:left;
 	width:614px;
-	background:url(../img/bg-center-column.jpg) top left no-repeat;
+	background:url(/images/bg-center-column.jpg) top left no-repeat;
 	background:-webkit-gradient(
 		linear,
 		left top,
@@ -140,6 +140,7 @@ a.logo {
 		rgb(221,221,221) 0%,
 		rgb(255,255,255) 50%
 	);
+	background:url(/images/bg-center-column.jpg) top left no-repeat;
 	border-radius: 15px;
 	-moz-border-radius: 15px;
 	-webkit-border-radius: 15px;
@@ -197,7 +198,7 @@ ul.nav li {
 	}
 ul.nav a {
 	padding:0 0 0 12px;
-	background:url(../img/arrow.gif) no-repeat 0 4px;
+	background:url(/images/arrow.gif) no-repeat 0 4px;
 	}
 ul.nav a:hover {
 	font-weight:bold;
